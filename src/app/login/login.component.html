@@ -1,0 +1,160 @@
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
+      <h1 id="ad" class="txt-color-orange">Additional Details</h1>
+
+      
+
+
+
+         <div class="form-group">
+            <label for="bid" class="cols-sm-2 control-label txt-color-black">Bhamashah ID *</label>
+            <input id="bid" required="bid" class="form-control"  [(ngModel)]="bid"  placeholder= {{bid}} name = "bid" [value] = "bid" >
+          value = {{bid}}
+           </div>
+
+        
+ 
+
+    <div class="form-group">
+        <label for="fname" class="cols-sm-2 control-label txt-color-black txt-firstname">First Name *</label>
+          <input type required="text" class="form-control" name="fname" id="fname" [(ngModel)]="fname" placeholder="First Name" value = "fname"/>
+        value = {{fname}}
+
+        <label for="lname" class="cols-sm-2 control-label txt-color-black txt-firstname">Last Name *</label>
+        <input type required="text" class="form-control" name="lname" id="lname" [(ngModel)]="lname" placeholder="Last Name" value = "lname"/>
+      value = {{lname}}
+</div>
+       
+
+
+     
+
+
+    <div class="form-group">
+        <label for="mnumber" class="cols-sm-2 control-label txt-color-black">Mobile Number *</label>
+        <input required type="tel" minlength="10" maxlength="10" class="form-control" name="mnumber" id="mnumber" placeholder="Mobile Number" [value] = "mnumber" [(ngModel)]="mnumber">
+        value = {{mnumber}}
+          </div>
+
+
+
+    <div class="form-group">
+        <label for="email" class="cols-sm-2 control-label txt-color-black">Email *</label>
+              
+            <input required type="email" class="form-control" id="email" value = {{email}} placeholder="email" name="email" [(ngModel)]="email">
+    </div>
+    
+
+
+    <div class="form-group">
+        <label for="dob" class="cols-sm-2 control-label txt-color-black">Date of Birth *</label>
+        <div class="cols-sm-10">
+          <div class="form-group">
+              <input required type="date" class="form-control" id="dob" value = {{dob}} placeholder="Date Of Birth" name="dob" [(ngModel)]= "dob" [value] = "dob" >
+              
+             
+          </div>
+        </div>
+      </div>          
+      
+
+
+
+      <div class="form-group">
+          <label for="maritalstatus" class="cols-sm-2 control-label txt-color-black">Marital_Status *</label>
+          <select id="maritalstatus" name="maritalstatus" [(ngModel)]="maritalstatus" class="form-control" required >
+            <option disabled hidden selected>{{maritalstatus}}</option>
+            <option *ngFor="let maritalstatus of mrs " value="maritalstatus"  [value]="maritalstatus.name">{{maritalstatus.name}}</option>
+          </select>
+          </div>
+
+
+
+        
+
+          <div class="form-group">
+              <label for="occupation" class="cols-sm-2 control-label txt-color-black">Occupation *</label>
+            <select id="occupation" name="occupation" [(ngModel)]="occupation" class="form-control"  required  >
+              <option disabled hidden selected>{{occupation}}</option>
+              <option *ngFor="let occupation of occup" value="occupation"  [value]="occupation.name">{{occupation.name}}</option>
+            </select>
+           </div>             
+
+
+           
+           <div class="form-group">
+              <label for="estatus" class="cols-sm-2 control-label txt-color-black">Education *</label>
+              <select id="estatus" name="estatus" [(ngModel)]="estatus" class="form-control" required >
+                <option disabled hidden selected>{{estatus}}</option>
+                <option *ngFor="let estatus of edu" value="estatus"  [value]="estatus">{{estatus.name}}</option>
+              </select>
+           </div>
+
+           <div class="form-group">
+              <label for="smartphone" class="cols-sm-2 control-label txt-color-black">Smart Phone *</label>
+              <div class="form-control"> 
+              <label class="radio-inline">
+                 
+             <input type="radio" value="yes" name="smartphone" [checked]="yes" [(ngModel)]="smartphone">Yes
+                </label>
+           
+                <label class="radio-inline">
+                  
+                    <input type="radio" value="no" name="smartphone" [(ngModel)]="smartphone">No
+                       </label>
+
+            </div>
+           </div>               
+       
+           <div class="form-group">
+              <label for="pincode" class="cols-sm-2 control-label txt-color-black">PostalCode *</label>
+              <div class="cols-sm-10">
+                <div class="form-group">
+                  <input required="pincode" class="form-control" name="pincode" id="pincode" [(ngModel)]="pincode" placeholder="Pincode" ngModel>
+                </div>
+              </div>
+          </div>
+
+
+
+           
+         
+ 
+    <button  type="submit" class="btn btn-default">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp; 
+    <button id="cancelid" type="button" class="btn btn-default">Cancel</button> 
+  </form>
+</div>
+</div>
+
+
+
+  <div class="row" *ngIf= "submitted">
+
+    
+
+     
+    <div class="col-xs-12">
+    <h3>Your Data</h3>
+  
+    <p>BhamashahId:{{bid}} </p>
+   
+   <p>First Name: {{fname}}</p>
+  <p> Last Name: {{lname}}</p>
+   <p> Mobile Number {{mnumber}} </p>
+    <p>Email: {{email}}</p>
+    <p>Date Of Birth: {{dob}}</p>
+   <p> Marital Status {{maritalstatus}} </p>
+   <p>Occupation: {{occupation}} </p>
+   <p> Education: {{estatus}}</p>
+   <p> Smart Phone: {{smartphone}} </p>
+  <p>  Postal Code: {{pincode}}</p>
+ 
+  
+ 
+ </div>
+
+</div>
+

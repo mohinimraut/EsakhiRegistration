@@ -1,0 +1,78 @@
+
+ <div class="container">
+  <div class="row main">
+      <div class="main-login main-center">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
+          <h1 id="ed" class="txt-color-orange">Extra Details</h1>
+    <div class="form-group">
+        <label for="Id" class="cols-sm-2 control-label txt-color-black"> SSOID *</label>
+        <input type required="ssoid" class="form-control" id="ssoid" placeholder=" SSOID" name="ssoid" ngModel >
+     
+      </div>
+
+
+  <div class="form-group">
+      <label for="code" class="cols-sm-2 control-label txt-color-black">ITGK Code *</label>
+
+      <input required type="Code" class="form-control" name="code" id="code" placeholder="ITGK Code" ngModel>
+      
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label txt-color-black">Name of Trainer *</label>
+                
+              <input required type="name" class="form-control" id="name" placeholder="Enter Name" name="name" ngModel>
+      </div>
+      
+
+
+      <div class="form-group">
+        <label for="number" class="cols-sm-2 control-label txt-color-black">Contact Number *</label>
+        <div class="cols-sm-10">
+          <div class="form-group">
+             
+            <input  required type="number"  class="form-control" name="number" id="number" placeholder="Contact Number" ngModel>
+          </div>
+        </div>
+      </div>
+
+
+  <div class="form-group">
+      <label for="email" class="cols-sm-2 control-label txt-color-black">Email ID *</label>
+      <input required type="email" class="form-control" id="email" placeholder="Email-ID" name="email" ngModel>
+  </div>
+  
+
+
+
+
+  
+
+  <div class="form-group">
+     
+
+    <label for="myid" class="cols-sm-2 control-label txt-color-black">User Name   *</label>
+<select id="myid" name="myid" [(ngModel)]="myid" class="form-control">
+      <option *ngFor="let myid of mid" [value]="myid.name">
+   
+    {{myid.name}}
+    </option>
+    </select>
+    </div>
+    
+
+  
+  <button type="submit" class="btn btn-default">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp; 
+  <button id="cancelid" type="button" class="btn btn-default">Cancel</button> 
+</form>
+</div>
+</div>
+
+
+
+</div>
+
+
+
